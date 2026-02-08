@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* 1. The container that crops the images */
+  .slider-window {
+    max-width: 600px;
+    height: 300px; /* Force a height to prevent jumping */
+    margin: 50px auto;
+    overflow: hidden;
+    border: 5px solid #333;
+    border-radius: 10px;
+    position: relative;
+  }
+      
+  /* 2. The moving strip */
+  .slide-strip {
+    display: flex;
+    height: 100%;
+    /* This creates the slow sliding animation */
+    /* 1s = slide duration. ease-in-out = smooth start/end */
+    transition: transform 1s ease-in-out; 
+  }
+
+  /* 3. The images */
+  .slide {
+    min-width: 100%; /* Force each slide to be full width */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-family: sans-serif;
+    color: white;
+    
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the box nicely */
+  }
+</style>
+</head>
+<body>
+
+<div class="slider-window">
+  <div class="slide-strip" id="strip">
+    
+    <div class="slide" style="background: #ff7f7f;">
+      <img src="sli 1.jpeg" alt="Slide 1">
+    </div>
+    
+    <div class="slide" style="background: #7f7fff;">
+      <img src="sli 2.jpeg" alt="Slide 2">
+    </div>
+    
+    <div class="slide" style="background: #7fff7f;">
+      <img src="sli 3.jpeg" alt="Slide 3">
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const strip = document.getElementById('strip');
+  const slides = document.querySelectorAll('.slide');
+  let index = 0;
+
+  // SETTINGS
+  const delay = 4000; // Time slide stays still (4000ms = 4 seconds)
+
+  function nextSlide() {
+    index++;
+    
+    // If we are at the last slide, go back to start
+    if (index >= slides.length) {
+      index = 0;
+    }
+
+    // Move the strip
+    strip.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  // Start the loop
+  setInterval(nextSlide, delay);
+  
+</script>
+
+</body>
+</html>
