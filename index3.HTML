@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body { background: linear-gradient(135deg, #0930dc 0%, #be07b5 100%); height: 100vh; }
+
+    /* The "Glass" Customization */
+    .navbar-glass {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50px;
+        margin-top: 20px;
+    }
+
+    .nav-link { color: white !important; opacity: 0.8; }
+    .nav-link:hover { opacity: 1; }
+
+    .search-glass {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        border-radius: 20px;
+        color: white;
+    }
+    .search-glass::placeholder { color: rgba(255, 255, 255, 0.7); }
+    .search-glass:focus { background: rgba(255, 255, 255, 0.3); color: white; box-shadow: none; }
+</style>
+
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-glass px-4">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white fw-bold" href="#">Brand</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Price</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">More</a>
+                        <ul class="dropdown-menu bg-dark">
+                            <li><a class="dropdown-item text-white" href="#">Action</a></li>
+                            <li><a class="dropdown-item text-white" href="#">Support</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form class="d-flex align-items-center gap-3">
+                    <input class="form-control search-glass me-2" type="search" placeholder="Search">
+                    <a href="#" class="btn btn-primary rounded-pill px-4 shadow">Know&nbsp;More</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>
